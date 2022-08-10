@@ -1,0 +1,41 @@
+<!-- la idea es luego dar transito a este proyecto en react -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Ricky and Morty</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <!-- muestraje de personajes-->
+
+      <section class="section_consume-characters">
+        <!-- se genera un div dinámico por cada personaje que se va a consumir traido desde la api-->
+
+        <div class="container-character">
+          <h3 class="character-name"></h3>
+          <img
+            src=""
+            alt=""
+            class="character-img"
+          />
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+
+    <script type="module" src="./src/js/restApiConsume.mjs"></script>
+    <script type="module" src="./src/js/urls.mjs"></script>
+
+    <script
+      type="module"
+      src="./src/js/DomElements/getDomElements.mjs"
+    ></script>
+
+    <script type="module" src=""></script>
+    <script type="module" src=""></script>
+  </body>
+</html>
