@@ -42,13 +42,6 @@ const getAllCharacters = async () => {
 
 
       sectionCharacter.append(h3Character, genderCharacter, imgCharacter)
-
-
-
-
-
-
-
     })
 
 

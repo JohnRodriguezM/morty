@@ -5,14 +5,58 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./src/css/styles.css">
     <title>About Ricky and Morty</title>
   </head>
   <body>
-    <header></header>
-    <main>
-      <!-- muestraje de personajes-->
+    <header>
 
-      <section class="section_consume-characters">
+
+
+
+
+
+
+    </header>
+    <main>
+
+      <section class="signup_signin">
+
+
+      <!--  <form action="">
+          <input type="email" name="email" id="email_auth" placeholder="Correo Electrónico" class ="input"> <br>
+          <input type="password" name="password" id="password_auth" placeholder="Contraseña" class = "input"> <br>
+          <button type = "submit" name="btn-submit">Entrar</button>
+        </form>-->
+    
+        <button id = "btn-google">
+          google signin
+          <i class="fa-brands fa-google"></i>
+        </button>
+
+
+       <!--   <button>
+            
+          </button>-->
+
+
+      </section>
+
+
+
+
+
+      <!-- muestraje de personajes y todo el contenido de la página-->
+
+
+      <section class="mainSection">
+        <!--meter todo el contenido luego acá-->
+      </section>
+
+
+      <section class="section_consume-characters inactive">
         <!-- se genera un div dinámico por cada personaje que se va a consumir traido desde la api-->
 
         <div class="container-character">
@@ -34,6 +78,16 @@
       type="module"
       src="./src/js/DomElements/getDomElements.mjs"
     ></script>
+
+
+    <!-- scripts de todo lo relacionado con firebase
+    -->
+
+    <script type="module" src="./src/js/firebase/firebaseSdk.mjs"></script>
+    <script type="module" src="./src/js/firebase/mainFirebase.mjs"></script>
+    <script type="module" src="./src/js/auth/auth.mjs"></script>
+
+
 
     <script type="module" src=""></script>
     <script type="module" src=""></script>
