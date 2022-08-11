@@ -12,9 +12,12 @@ console.log(provider);
 
 
 
-const button = document.getElementById('btn-google')
+const btnSignIn = document.getElementById('btn-google-signin')
 
-button.addEventListener('click', ()=> {
+
+const btnSignOff = document.getElementById('btn-google-signoff')
+
+btnSignIn.addEventListener('click', ()=> {
 
   const auth = getAuth();
   console.log(auth);
@@ -38,4 +41,16 @@ button.addEventListener('click', ()=> {
       // ...
     });
 })
+function cerrarSesión(){
+  signOut(getAuth())
+      .then(()=> {
+          alert('sesion cerrada')
+      })
+      .catch((error)=>{
+          console.error(error.message)
+      });
+}
+
+btnSignOff.addEventListener('click', () => cerrarSesión);
+
 
