@@ -3,10 +3,10 @@
 
 
 import { URL_OBJ } from './urls.mjs'
-import { DOM_ELEMENTS } from './DomElements/getDomElements.mjs'
+import { DOM_ELEMENTS } from '../DomElements/getDomElements.mjs'
 
 
-const getAllCharacters = async () => {
+export const getAllCharacters = async () => {
   const { GET_ALL_CHARACTERS } = URL_OBJ;
   const { sectionCharacter } = DOM_ELEMENTS;
 
@@ -65,7 +65,3 @@ const _ = async () => {
 
 
 //!ejecución de las funciones a nivel del objeto window
-
-window.addEventListener('DOMContentLoaded', () => {
-  getAllCharacters()
-})

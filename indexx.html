@@ -5,72 +5,59 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./src/css/styles.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+      integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./src/css/styles.css" />
     <title>About Ricky and Morty</title>
   </head>
   <body>
     <header>
-
-
-
-
-
-
-
+      <p class="displayNameGoogle inactive"></p>
+      <img class="img_google inactive" src="" alt="" />
     </header>
     <main>
-
       <section class="signup_signin">
-
-
-      <!--  <form action="">
+        <!--  <form action="">
           <input type="email" name="email" id="email_auth" placeholder="Correo Electrónico" class ="input"> <br>
           <input type="password" name="password" id="password_auth" placeholder="Contraseña" class = "input"> <br>
           <button type = "submit" name="btn-submit">Entrar</button>
         </form>-->
-    
-        <button id = "btn-google-signin">
+
+        <button id="btn-google-signin">
           google signin
           <i class="fa-brands fa-google"></i>
         </button>
 
-
-          <button id = "btn-google-signoff">
-            cerrar sesión
-          </button>
-
-       <!--   <button>
+        <!--   <button>
             
           </button>-->
-
-
       </section>
-
-
-
-
 
       <!-- muestraje de personajes y todo el contenido de la página-->
 
+      <section class="mainSection inactive">
+        <button id="btn-google-signoff">cerrar sesión</button>
+        <section class="section_consume-characters">
+          <!-- se genera un div dinámico por cada personaje que se va a consumir traido desde la api-->
 
-      <section class="mainSection">
+          <div class="container-character">
+            <h3 class="character-name"></h3>
+            <img src="" alt="" class="character-img" />
+          </div>
+        </section>
         <!--meter todo el contenido luego acá-->
-      </section>
-
-
-      <section class="section_consume-characters inactive">
-        <!-- se genera un div dinámico por cada personaje que se va a consumir traido desde la api-->
-
-        <div class="container-character">
-          <h3 class="character-name"></h3>
-          <img
-            src=""
-            alt=""
-            class="character-img"
-          />
-        </div>
       </section>
     </main>
     <footer></footer>
@@ -78,11 +65,13 @@
     <script type="module" src="./src/js/restApiConsume.mjs"></script>
     <script type="module" src="./src/js/urls.mjs"></script>
 
+
+    <!-- documentos extraidos del dom a través de clases o ids-->
+
     <script
       type="module"
       src="./src/js/DomElements/getDomElements.mjs"
     ></script>
-
 
     <!-- scripts de todo lo relacionado con firebase
     -->
@@ -91,9 +80,8 @@
     <script type="module" src="./src/js/firebase/mainFirebase.mjs"></script>
     <script type="module" src="./src/js/auth/auth.mjs"></script>
 
-
-
-    <script type="module" src=""></script>
+    <!--archivo de navegación, se va a manejar desde la pantalla de home, no desde la pantalla de navegación  -->
+    <script type="module" src="./src/js/manejoApi/navigation.mjs"></script>
     <script type="module" src=""></script>
   </body>
 </html>
