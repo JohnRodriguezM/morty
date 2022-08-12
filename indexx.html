@@ -28,12 +28,40 @@
       <img class="img_google inactive" src="" alt="" />
     </header>
     <main>
-      <section class="signup_signin">
+      <section class="signup_signin"
+      
+      
+      style = "
+      height:100vh;
+      width:100vw;
+      "
+
+      >
         <!--  <form action="">
           <input type="email" name="email" id="email_auth" placeholder="Correo Electrónico" class ="input"> <br>
           <input type="password" name="password" id="password_auth" placeholder="Contraseña" class = "input"> <br>
           <button type = "submit" name="btn-submit">Entrar</button>
+
+
+
+
         </form>-->
+        <div id="carrusel-contenido">
+          <div id="carrusel-caja">
+              <div class="carrusel-elemento">
+                  <img class="imagenes" src="/src/assets/black.gif" >
+              </div>
+              <div class="carrusel-elemento">   
+                  <img class="imagenes" src="/src/assets/rick-and-morty-rick.gif">
+              </div>
+              <div class="carrusel-elemento">   
+                  <img class="imagenes" src="/src/assets/download.gif">                        
+              </div>
+          </div>
+      </div>
+
+        <!--<img class = "img-inicial" src="./src/assets/black.gif" alt="">--> <br>
+
 
         <button id="btn-google-signin">
           google signin
@@ -51,7 +79,7 @@
         <button id="btn-google-signoff">cerrar sesión</button>
         <section class="section_consume-characters">
           <!-- se genera un div dinámico por cada personaje que se va a consumir traido desde la api-->
-
+          <input type="text" placeholder="Buscar personaje" id = "inputSearchCharacter">
           <div class="container-character">
             <h3 class="character-name"></h3>
             <img src="" alt="" class="character-img" />

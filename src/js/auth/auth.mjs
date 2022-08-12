@@ -1,14 +1,20 @@
-//! se pretende realizar autenticación con correo electronico y contraseña - en lo ideal con gmail, para extaer el token del name de google
+//! elementos importados de firebase para el manejo de la autenticación
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-auth.js";
 
+//*elementos que se recuperan del dom a través de de id o class
 import { DOM_ELEMENTS } from '../DomElements/getDomElements.mjs'
 
+//? destructuring de las propiedades que contiene el objeto DOM_ELEMENTS
+const { signInGoogle, mainSection, displayNameGoogle, imgGoogle,btnSignIn,btnSignOff } = DOM_ELEMENTS;
 
+//* funcion qu está haciendo la petición get a la api de rick and morty, trayendo lo personajes (all)
 import { getAllCharacters } from '../manejoApi/restApiConsume.mjs'
 
-const { signInGoogle, mainSection, displayNameGoogle, imgGoogle } = DOM_ELEMENTS;
+
+//*funciones que me permite poner elementos es display none or remove display none
+import {displayNone, displayVisible} from '../helpers/utilFunctions.mjs'
 
 
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-auth.js";
 
 const provider = new GoogleAuthProvider();
 console.log(provider);
@@ -35,12 +41,12 @@ export function authGoogle() {
 
       //! interaccion que va a ocurrir en el dom
 
-      signInGoogle.classList.add('inactive')
+
+      displayNone(signInGoogle)
+      //* se ejecuta la función que hace la petición a la API
       getAllCharacters()
-      mainSection.classList.remove('inactive')
-      displayNameGoogle.innerHTML = user.displayName;
-      displayNameGoogle.classList.remove('inactive')
-      imgGoogle.classList.remove('inactive')
+      displayVisible(imgGoogle,mainSection,displayNameGoogle)
+      displayNameGoogle.innerHTML = "Bienvenido, " + user.displayName;
       imgGoogle.src = user.photoURL
 
 
@@ -57,22 +63,14 @@ export function signOutGoogle() {
   signOut(auth)
     .then(() => {
       alert('sesion cerrada')
-      mainSection.classList.add('inactive')
-      displayNameGoogle.classList.add('inactive')
-      imgGoogle.classList.add('inactive')
-      signInGoogle.classList.remove('inactive')
-
+      displayNone(mainSection,displayNameGoogle,imgGoogle)
+      displayVisible(signInGoogle)
     })
     .catch((error) => {
       console.error('no cerrada')
       console.log(error);
     });
 }
-
-
-const btnSignIn = document.getElementById('btn-google-signin')
-const btnSignOff = document.getElementById('btn-google-signoff')
-
 
 
 btnSignIn.addEventListener('click', authGoogle)
